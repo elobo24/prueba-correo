@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Mail;
 
 class envioEmail extends Command
 {
@@ -11,7 +12,7 @@ class envioEmail extends Command
      *
      * @var string
      */
-    protected $signature = 'enviod:email';
+    protected $signature = 'envio:email';
 
     /**
      * The console command description.
@@ -37,6 +38,17 @@ class envioEmail extends Command
      */
     public function handle()
     {
-        //
+        $data = array(
+            'name' => 'prueba el correo',
+        );
+
+        Mail::send('email.envio', $data, function ($message) {
+            $message->from('jlobo24081988@gmail.com', 'Ender Lobo');
+            $message->to('jlobo24081988@gmail.com', 'Ender Lobo');
+            $message->subject('Prueba Ender');
+        });
+
+        return "Tú email ha sido enviado";
+
     }
 }
