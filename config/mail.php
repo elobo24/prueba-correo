@@ -112,14 +112,6 @@ return [
     |
     */
 
-    'stream' => [
-        'ssl' => [
-            'allow_self_signed' => true,
-            'verify_peer' => false,
-            'verify_peer_name' => false,
-        ],
-        ],
-
     'markdown' => [
         'theme' => 'default',
 
@@ -139,6 +131,6 @@ return [
     |
     */
 
-    'activation' => env('MAIL_ACTIVATION_URL', 'http://127.0.0.1'),
+    'log_channel' => env('MAIL_LOG_CHANNEL'),
 
 ];

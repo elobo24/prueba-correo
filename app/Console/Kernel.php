@@ -14,7 +14,6 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         //
-        'App\Console\Commands\envioEmail'
     ];
 
     /**
@@ -25,10 +24,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('envio:email')->hourly();
-
-        return true;
-
+        // $schedule->command('inspire')
+        //          ->hourly();
     }
 
     /**
